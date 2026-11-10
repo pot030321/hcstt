@@ -1,0 +1,40 @@
+{
+  "dataset": "ESC-50",
+  "sample_rule": "1 per class, round-robin across folds by filename",
+  "model": "LAION-CLAP non-fusion CPU",
+  "classes": 50,
+  "kg_covered_classes": 33,
+  "seconds": 42.94091439247131,
+  "baseline": {
+    "n": 50,
+    "hit1": 0.9,
+    "hit3": 1.0,
+    "hit5": 1.0,
+    "mrr": 0.9466666666666665
+  },
+  "kg": {
+    "n": 50,
+    "hit1": 0.9,
+    "hit3": 1.0,
+    "hit5": 1.0,
+    "mrr": 0.9466666666666665
+  },
+  "folds": {
+    "1": {
+      "baseline": {
+        "n": 50,
+        "hit1": 0.9,
+        "hit3": 1.0,
+        "hit5": 1.0,
+        "mrr": 0.9466666666666665
+      },
+      "kg": {
+        "n": 50,
+        "hit1": 0.9,
+        "hit3": 1.0,
+        "hit5": 1.0,
+        "mrr": 0.9466666666666665
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source": "DDXPlus English v2 synthetic test patients",
+  "total_test_rows": 134529,
+  "sample_size": 1000,
+  "seed": 7,
+  "ranking_from": "positive symptom codes only; categorical values ignored",
+  "unweighted_overlap": {
+    "evaluated": 1000,
+    "top1": 0.776,
+    "recall_at_5": 0.961,
+    "mrr": 0.8544
+  },
+  "idf_weighted_overlap": {
+    "evaluated": 1000,
+    "top1": 0.776,
+    "recall_at_5": 0.961,
+    "mrr": 0.8544
+  }
+}

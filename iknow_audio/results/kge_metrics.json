@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "epochs": 10,
+  "dimension": 64,
+  "train_triples": 18348,
+  "test_triples": 2039,
+  "test_seen_entities": 1771,
+  "test_excluded_unseen": 268,
+  "candidate_entities": 4294,
+  "rotate_style": {
+    "hit1": 0.06775832862789384,
+    "hit3": 0.10559006211180125,
+    "hit10": 0.18972332015810275,
+    "mrr": 0.11010392728291873
+  },
+  "relation_frequency_baseline": {
+    "hit1": 0.08413325804630152,
+    "hit3": 0.15527950310559005,
+    "hit10": 0.31281761716544326,
+    "mrr": 0.15374245386399463
+  }
+}

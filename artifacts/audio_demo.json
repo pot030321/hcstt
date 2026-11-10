@@ -1,0 +1,22 @@
+{
+  "file": "samples\\influenza_demo.mp3",
+  "audio_type": "synthetic English speech; one demo clip",
+  "expected_transcript": "I have a runny nose, chills, and a sore throat.",
+  "transcript": "I have a runny nose, chills, and a sore throat.",
+  "transcript_exact_match": true,
+  "mapped_codes": [
+    "E_181",
+    "E_94",
+    "E_97"
+  ],
+  "ignored_clauses": [],
+  "disease_candidates": 14,
+  "top_score_ties": 1,
+  "top_disease": "Influenza",
+  "top_score": 1.0,
+  "top_evidence_codes": [
+    "E_181",
+    "E_94",
+    "E_97"
+  ]
+}

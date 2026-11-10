@@ -1,0 +1,9 @@
+openai-whisper
+soundfile
+scipy
+torch
+scikit-learn
+joblib
+python-docx
+python-pptx
+matplotlib

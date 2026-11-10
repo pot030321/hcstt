@@ -1,0 +1,10 @@
+**/.venv/
+**/__pycache__/
+*.py[cod]
+iknow_audio/data/cache/
+iknow_audio/data/wheels/
+artifacts/web_demo_new.png
+artifacts/web_ui.png
+iknow_audio/data/630k-audioset-best.pt
+iknow_audio/data/ESC-50.zip
+iknow_audio/data/ESC-50/audio/

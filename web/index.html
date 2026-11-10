@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tra cứu triệu chứng | Đồ án Hệ cơ sở tri thức</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#18334b;background:#f3f7f8}
+    *{box-sizing:border-box}body{margin:0}button,textarea,input{font:inherit}button{cursor:pointer}
+    .hero{background:linear-gradient(115deg,#10344c,#0a6d77);color:white;padding:38px 24px 84px}
+    .hero-inner,.shell{max-width:1080px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#b6e5e7;font-weight:800}
+    h1{font-size:clamp(27px,4vw,42px);line-height:1.15;margin:12px 0}h2{font-size:20px;margin:0 0 15px}h3{font-size:17px;margin:0 0 8px}
+    .hero p{max-width:660px;line-height:1.6;color:#e2eff1;margin:0}.shell{padding:0 24px 40px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:20px;position:relative;margin-top:-48px}
+    .panel{background:white;border:1px solid #dce8ea;border-radius:18px;box-shadow:0 12px 34px #173c5212;padding:25px;min-width:0}
+    .panel.results{grid-column:2;grid-row:1 / span 2}.panel.info{grid-column:1}
+    .steps{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 23px}.step{background:#e9f4f3;color:#0b6470;padding:7px 10px;border-radius:30px;font-size:12px;font-weight:750}
+    .tabs{display:flex;gap:7px;background:#eff4f5;border-radius:12px;padding:5px;margin:0 0 18px}.tab{border:0;border-radius:9px;background:none;color:#436070;padding:10px 16px;font-weight:750;flex:1}.tab[aria-selected="true"]{background:white;color:#086b75;box-shadow:0 2px 7px #183e4b1c}
+    label{display:block;font-weight:750;font-size:14px;margin-bottom:8px}textarea{display:block;width:100%;min-height:126px;resize:vertical;border:1px solid #b9cdd2;border-radius:12px;padding:14px;line-height:1.55;color:#18334b;background:#fff}
+    textarea:focus,input:focus,button:focus-visible{outline:3px solid #7cd7d7;outline-offset:2px}.hint{font-size:13px;color:#617985;line-height:1.5;margin:8px 0 17px}
+    .upload{display:block;border:2px dashed #84bdc1;background:#f2f9f9;border-radius:13px;padding:22px;text-align:center;color:#115965;font-weight:750;cursor:pointer}.upload:hover{background:#e9f5f5}.upload small{display:block;color:#647b86;font-weight:400;margin-top:5px}.upload input{position:absolute;width:1px;height:1px;opacity:0}
+    audio{width:100%;margin:12px 0 0}.primary{border:0;border-radius:11px;background:#087b83;color:white;font-weight:800;padding:12px 19px;min-height:46px}.primary:hover{background:#096b73}.primary:disabled{opacity:.55;cursor:wait}
+    .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.status{font-size:13px;color:#58727c;min-height:20px}.error{color:#a13230}.results .placeholder{color:#5e7580;line-height:1.6;border:1px dashed #c9dadd;border-radius:12px;padding:23px;background:#f9fcfc}
+    .statline{font-size:13px;color:#516c78;margin:0 0 18px}.symptom{padding:11px 13px;background:#edf7f6;border-radius:10px;margin:7px 0}.symptom strong{color:#087580}.symptom small{display:block;color:#607783;margin-top:4px}.muted{color:#617985;font-size:13px;line-height:1.5}
+    .warning{border-left:4px solid #e6ac54;background:#fff8eb;padding:12px 14px;border-radius:7px;margin:15px 0;color:#705021;font-size:14px;line-height:1.5}
+    .disease{border:1px solid #deeaec;border-radius:12px;padding:14px;margin-top:10px}.disease-head{display:flex;justify-content:space-between;gap:10px;align-items:start}.score{font-weight:800;color:#087580;white-space:nowrap}.disease ul{padding-left:19px;margin:8px 0 0;color:#526d78;font-size:13px;line-height:1.5}
+    .featured{background:#e8f6f2;border:1px solid #8ecabb;border-radius:15px;padding:20px;margin:14px 0}.featured .eyebrow{color:#087267}.featured h3{font-size:29px;margin:6px 0}.featured p{margin:8px 0;color:#365b60;line-height:1.5}.featured ul{padding-left:19px;line-height:1.6}.secondary{border:1px solid #9bc6c9;background:white;color:#0a6570;border-radius:10px;padding:10px 14px;font-weight:750;margin:12px 0 4px}.secondary:hover{background:#eef8f8}.other{margin-top:15px}.other summary,.kb summary{cursor:pointer;color:#0d6370;font-weight:800}.other summary{font-size:14px}.kb summary{font-size:20px}.kb details[open] summary{margin-bottom:18px}
+    .info p,.info li{font-size:14px;color:#526d78;line-height:1.55}.info ol{padding-left:20px}.info a{color:#086d79}.privacy{font-size:12px;color:#6b8089;margin-top:18px}
+    .panel.kb{grid-column:1 / -1}.kb-grid{display:grid;grid-template-columns:260px 1fr;gap:20px}.kb select{width:100%;padding:11px;border:1px solid #b9cdd2;border-radius:10px;background:white;color:#18334b}.kb table{border-collapse:collapse;width:100%;font-size:13px}.kb th,.kb td{text-align:left;border-bottom:1px solid #e3edef;padding:9px;vertical-align:top}.kb th{color:#476673;background:#f4f9f9}.kb-meta{color:#617985;font-size:13px;line-height:1.6}
+    [hidden]{display:none!important}@media(max-width:800px){.shell{grid-template-columns:1fr}.panel.results,.panel.info,.panel.kb{grid-column:1;grid-row:auto}.kb-grid{grid-template-columns:1fr}.hero{padding-bottom:70px}}
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="hero-inner"><div class="eyebrow">Đồ án Hệ cơ sở tri thức · DDXPlus</div><h1>Nghe triệu chứng, tìm bệnh liên quan</h1><p>Thử ca giọng nói mẫu hoặc tải audio tiếng Anh. Trang sẽ hiện bệnh được xếp đầu, những triệu chứng đã dùng và lý do lấy từ cơ sở tri thức.</p></div></header>
+  <main class="shell">
+    <section class="panel" aria-labelledby="input-title">
+      <div class="steps"><span class="step">1 · Nhập liệu</span><span class="step">2 · Kiểm tra bản chép</span><span class="step">3 · Tra cứu KB</span></div>
+      <h2 id="input-title">Mô tả triệu chứng</h2>
+      <div class="tabs" role="tablist" aria-label="Cách nhập"><button class="tab" id="audio-tab" role="tab" aria-selected="true" type="button">Tải audio</button><button class="tab" id="text-tab" role="tab" aria-selected="false" type="button">Nhập văn bản</button></div>
+      <div id="audio-panel"><label class="upload">Chọn file giọng nói tiếng Anh<input id="audio-file" type="file" accept=".wav,.mp3,.flac,.ogg,audio/*"><small>WAV, MP3, FLAC, OGG · tối đa 60 giây và 10 MB</small></label><button id="sample-audio" class="secondary" type="button">▶ Chạy audio mẫu: sổ mũi, ớn lạnh, đau họng</button><audio id="audio-player" controls hidden></audio><p class="hint">Sau khi chép lời, hệ thống tự tra cứu. Bạn có thể sửa bản chép rồi bấm Tra cứu lại.</p></div>
+      <label for="symptom-text">Văn bản dùng để tra cứu</label>
+      <textarea id="symptom-text" maxlength="2000" spellcheck="false" placeholder="Ví dụ: I have a runny nose, chills, and a sore throat"></textarea>
+      <p class="hint">Hệ thống hiện hỗ trợ 15 triệu chứng tiếng Anh. Nếu thiếu dữ kiện hoặc nhiều bệnh đồng điểm, kết quả sẽ nói rõ.</p>
+      <div class="row"><button id="analyze" class="primary" type="button">Tra cứu bệnh liên quan</button><span id="status" class="status" role="status" aria-live="polite"></span></div>
+    </section>
+    <section class="panel results" aria-labelledby="result-title"><h2 id="result-title">Bệnh nào được gợi ý?</h2><div id="results" class="placeholder">Bấm <strong>Chạy audio mẫu</strong> để xem một ca đầy đủ: từ giọng nói đến bệnh được xếp đầu và các triệu chứng giải thích.</div></section>
+    <aside class="panel info"><h3>Trang này làm gì?</h3><ol><li>Chép giọng nói thành một câu tiếng Anh.</li><li>Tìm các triệu chứng trong câu, chẳng hạn sổ mũi và đau họng.</li><li>Tra bảng quan hệ bệnh–triệu chứng để xếp hạng và nêu lý do.</li></ol><p><strong>Cơ sở tri thức</strong> là dữ liệu DDXPlus lưu trong SQLite: bệnh, triệu chứng và liên kết giữa chúng. Điểm khớp không phải xác suất mắc bệnh. Đây là ca mô phỏng để học tập, không dùng để chẩn đoán hoặc điều trị.</p><p><a href="https://mila-iqia.github.io/ddxplus/" target="_blank" rel="noopener noreferrer">Nguồn dữ liệu: DDXPlus English v2 ↗</a></p><div class="privacy">Ứng dụng chạy tại 127.0.0.1; file audio được xóa sau khi chép lời.</div></aside>
+    <section class="panel kb"><details><summary id="kb-title">Xem cơ sở tri thức SQLite và các quan hệ</summary><div class="kb-grid"><div><p class="kb-meta" id="kb-summary">Đang đọc SQLite…</p><label for="kb-disease">Chọn bệnh để xem quan hệ</label><select id="kb-disease" aria-label="Chọn bệnh"></select><p class="kb-meta">Mỗi hàng nối một bệnh với một triệu chứng hoặc tiền sử trong DDXPlus. Khi xếp hạng, hệ thống dùng quan hệ <strong>has_symptom</strong>.</p></div><div><h3 id="kb-selected">Quan hệ của bệnh</h3><div id="kb-relations" class="muted">Đang tải…</div></div></div></details></section>
+  </main>
+  <script>
+    const $ = id => document.getElementById(id);
+    const status = (message, error=false) => { $('status').textContent=message; $('status').className='status'+(error?' error':''); };
+    const element = (tag, className, value) => { const node=document.createElement(tag); if(className) node.className=className; if(value!==undefined) node.textContent=value; return node; };
+    const switchTab = audio => { $('audio-panel').hidden=!audio; $('audio-tab').setAttribute('aria-selected', String(audio)); $('text-tab').setAttribute('aria-selected', String(!audio)); };
+    $('text-tab').onclick=()=>switchTab(false); $('audio-tab').onclick=()=>switchTab(true);
+    async function transcribeFile(file){
+      const ext='.'+file.name.split('.').pop().toLowerCase();
+      if(!['.wav','.mp3','.flac','.ogg'].includes(ext) || file.size>10*1024*1024){status('File phải là WAV, MP3, FLAC hoặc OGG và không quá 10 MB.',true);return;}
+      $('audio-player').src=URL.createObjectURL(file); $('audio-player').hidden=false;
+      status('Đang nghe và chép lời…'); $('analyze').disabled=true; $('sample-audio').disabled=true;
+      try {
+        const response=await fetch('/api/transcribe',{method:'POST',headers:{'X-Audio-Extension':ext},body:file});
+        const data=await response.json(); if(!response.ok) throw Error(data.error);
+        $('symptom-text').value=data.transcript;
+        if(await analyzeText()) status('Đã tra cứu. Bạn có thể sửa bản chép và tra lại.');
+      }catch(error){status('Không đọc được audio: '+error.message,true);}
+      finally{$('analyze').disabled=false;$('sample-audio').disabled=false;}
+    }
+    $('audio-file').onchange=event=>{const file=event.target.files[0];if(file)transcribeFile(file);};
+    $('sample-audio').onclick=async()=>{
+      try{const response=await fetch('/samples/influenza_demo.mp3');if(!response.ok)throw Error('Không tải được audio mẫu');
+        await transcribeFile(new File([await response.blob()],'influenza_demo.mp3',{type:'audio/mpeg'}));}
+      catch(error){status(error.message,true);}
+    };
+    async function analyzeText(){
+      const value=$('symptom-text').value.trim(); if(!value){status('Hãy nhập hoặc chép lời mô tả triệu chứng.',true);$('symptom-text').focus();return false;}
+      status('Đang ánh xạ triệu chứng và tra cứu…'); $('analyze').disabled=true;
+      try{const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:value})}); const data=await response.json(); if(!response.ok) throw Error(data.error); render(data); status('Tra cứu hoàn tất.');return true;}
+      catch(error){status('Không tra cứu được: '+error.message,true);return false;}
+      finally{$('analyze').disabled=false;}
+    }
+    $('analyze').onclick=analyzeText;
+    function render(data){
+      const root=$('results'); root.className=''; root.replaceChildren();
+      root.append(element('p','statline',`Tìm thấy ${data.distinct_symptoms} triệu chứng · ${data.candidate_count} bệnh có ít nhất một liên kết`));
+      if(data.distinct_symptoms<2){root.append(element('div','warning','Chưa đủ dữ kiện để gợi ý bệnh. Hãy mô tả thêm ít nhất một triệu chứng khác.'));}
+      else if(!data.diseases.length){root.append(element('div','warning','Không tìm thấy bệnh có liên kết với các triệu chứng này trong cơ sở tri thức.'));}
+      else if(data.top_ties>1){root.append(element('div','warning',`${data.top_ties} bệnh đang cùng điểm cao nhất. Không thể chọn một bệnh từ thông tin này; hãy bổ sung triệu chứng.`));}
+      else {
+        const top=data.diseases[0],box=element('div','featured');
+        box.append(element('div','eyebrow','Bệnh được xếp đầu trong DDXPlus'));
+        box.append(element('h3','',top.name==='Influenza'?'Cúm (Influenza)':top.name));
+        box.append(element('p','',`Có liên kết với ${top.links.length}/${data.distinct_symptoms} triệu chứng đã nhận diện. Đây là thứ hạng tra cứu, không phải chẩn đoán.`));
+        const list=element('ul');for(const link of top.links)list.append(element('li','',link.question));box.append(list);root.append(box);
+        loadKb(top.name);
+      }
+      root.append(element('h3','', 'Hệ thống nghe được gì?'));
+      if(!data.matched.length) root.append(element('p','muted','Chưa nhận diện được triệu chứng thuộc 15 loại đang hỗ trợ.'));
+      for(const item of data.matched){const box=element('div','symptom');box.append(element('strong','',item.clause));box.append(element('small','',`${item.question} · mã ${item.code}`));root.append(box);}
+      if(data.ignored.length) root.append(element('p','muted','Cụm không dùng để tra cứu: '+data.ignored.join(' · ')));
+      if(data.diseases.length){const other=element('details','other');other.append(element('summary','',`Xem ${data.diseases.length} bệnh đứng đầu và các liên kết`));
+        for(const disease of data.diseases){const card=element('div','disease');const head=element('div','disease-head');head.append(element('strong','',disease.name));head.append(element('span','score',`${disease.links.length}/${data.distinct_symptoms} triệu chứng`));card.append(head);const links=element('ul');for(const link of disease.links)links.append(element('li','',`${link.code}: ${link.question}`));card.append(links);other.append(card);}root.append(other);}
+      root.append(element('p','muted','Dữ liệu là ca mô phỏng; kết quả không dùng để tự chẩn đoán hoặc điều trị.'));
+    }
+    async function loadKb(name='Acute laryngitis'){
+      try{
+        const response=await fetch('/api/kb?disease='+encodeURIComponent(name)); const data=await response.json(); if(!response.ok) throw Error(data.error);
+        const c=data.counts; $('kb-summary').textContent=`${c.disease} bệnh · ${c.evidence} dữ kiện · ${c.has_symptom} liên kết triệu chứng · ${c.has_antecedent} liên kết tiền sử. Nguồn: ${data.source.dataset} v${data.source.version}.`;
+        if(!$('kb-disease').options.length) for(const disease of data.diseases){const option=element('option','',disease);option.value=disease;$('kb-disease').append(option);}
+        $('kb-disease').value=data.selected; $('kb-selected').textContent=`Quan hệ của ${data.selected}`;
+        const table=element('table'); const header=element('tr'); for(const value of ['Loại quan hệ','Mã','Nội dung']) header.append(element('th','',value)); table.append(header);
+        for(const row of data.relations){const tr=element('tr'); for(const value of [row.relation,row.code,row.question_en]) tr.append(element('td','',value));table.append(tr);}
+        $('kb-relations').replaceChildren(table);
+      }catch(error){$('kb-relations').textContent='Không đọc được cơ sở tri thức: '+error.message;}
+    }
+    $('kb-disease').onchange=event=>loadKb(event.target.value); loadKb();
+    if(new URLSearchParams(location.search).has('demo')){$('symptom-text').value='I have a runny nose and chills and a sore throat';$('analyze').click();}
+  </script>
+</body>
+</html>

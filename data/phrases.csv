@@ -1,0 +1,76 @@
+evidence_id,split,text
+E_91,train,I have a fever
+E_91,train,My temperature is high
+E_91,train,I feel feverish
+E_91,val,I'm running a temperature
+E_91,test,I think I have a high fever
+E_201,train,I have a cough
+E_201,train,I've been coughing
+E_201,train,I keep coughing
+E_201,val,I can't stop coughing
+E_201,test,I've got a persistent cough
+E_97,train,My throat is sore
+E_97,train,I have a sore throat
+E_97,train,There is soreness in my throat
+E_97,val,My throat feels painful and sore
+E_97,test,I am experiencing throat soreness
+E_66,train,I feel short of breath
+E_66,train,I am having trouble breathing
+E_66,train,It is hard for me to breathe
+E_66,val,I can't catch my breath
+E_66,test,Breathing feels difficult
+E_51,train,I have diarrhea
+E_51,train,I have loose stools
+E_51,train,I keep passing watery stool
+E_51,val,My stools are very loose
+E_51,test,I am having frequent diarrhea
+E_148,train,I feel nauseous
+E_148,train,I feel like throwing up
+E_148,train,My stomach feels queasy
+E_148,val,I feel sick to my stomach
+E_148,test,I think I might vomit
+E_94,train,I have chills
+E_94,train,I keep shivering
+E_94,train,I feel cold and shaky
+E_94,val,I've been having shivers
+E_94,test,I'm shivering a lot
+E_181,train,My nose is blocked
+E_181,train,I have a runny nose
+E_181,train,My nose feels congested
+E_181,val,My nose is stuffed up
+E_181,test,I have nasal congestion
+E_89,train,I feel tired all the time
+E_89,train,I have ongoing fatigue
+E_89,train,I am exhausted even after sleeping
+E_89,val,I feel constantly fatigued
+E_89,test,I wake up still tired
+E_162,train,I have lost weight without trying
+E_162,train,My weight has dropped over the past months
+E_162,train,I am losing weight unintentionally
+E_162,val,I keep losing weight for no reason
+E_162,test,I've lost weight recently without dieting
+E_155,train,My heart is racing
+E_155,train,I feel palpitations
+E_155,train,My heartbeat feels irregular
+E_155,val,My heart keeps skipping beats
+E_155,test,I can feel my heart pounding
+E_144,train,My muscles ache all over
+E_144,train,I have widespread muscle pain
+E_144,train,My whole body has muscle aches
+E_144,val,I have pain in muscles throughout my body
+E_144,test,My muscles are sore everywhere
+E_151,train,My body is swollen
+E_151,train,I have swelling in my legs
+E_151,train,Part of my body is puffy
+E_151,val,I noticed swelling in my feet
+E_151,test,My arms are swollen
+E_211,train,I have vomited several times
+E_211,train,I keep throwing up
+E_211,train,I have been vomiting repeatedly
+E_211,val,I threw up many times today
+E_211,test,I can't stop vomiting
+E_103,train,I can't smell anything
+E_103,train,I lost my sense of smell
+E_103,train,I cannot detect odors
+E_103,val,I no longer notice smells
+E_103,test,My sense of smell is gone
