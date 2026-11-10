@@ -43,4 +43,4 @@ py -3.11 kb.py audio samples/influenza_demo.mp3
 
 **Phạm vi:** 15 triệu chứng tiếng Anh được ánh xạ bằng mô hình văn bản học tương phản sau ASR. Điểm xếp hạng không phải xác suất mắc bệnh. Phần mềm chỉ dùng để học và minh họa, không dùng để chẩn đoán.
 
-**Tài nguyên lớn của nhánh iKnow-audio:** Checkpoint CLAP 1,86 GB và ESC-50 được dẫn nguồn, kèm SHA-256 trong [hướng dẫn nhánh](iknow_audio/README.md). GitHub từ chối upload Git LFS vì repo đã vượt hạn mức LFS của tài khoản, nên hai tệp này và WAV giải nén chưa có trên repo. Các kết quả, mã nguồn và tài liệu của nhánh vẫn được đưa lên; cần tải tài nguyên theo liên kết nguồn trước khi chạy lại thí nghiệm đó.
+**Tài nguyên lớn của nhánh iKnow-audio:** Checkpoint CLAP 1,86 GB và ESC-50 không lưu trong Git. Chạy `py -3.11 iknow_audio/download_assets.py` để tải từ nguồn chính thức, kiểm tra SHA-256 và giải nén 2.000 WAV vào đúng chỗ; xem [hướng dẫn nhánh](iknow_audio/README.md). Demo tra bệnh ở thư mục gốc không cần bước này.

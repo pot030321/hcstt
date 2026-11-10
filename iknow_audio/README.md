@@ -46,7 +46,7 @@ py -3.11 iknow_audio/graph.py
 
 Mở <http://127.0.0.1:8766>, tải một clip trong `iknow_audio/data/ESC-50/audio`. Lần đầu cần nạp checkpoint 1,86 GB vào RAM. `--per-class 0` chạy toàn bộ 2.000 clip; `5` chọn một clip mỗi fold cho từng lớp (250 clip). Dự đoán từng clip ở `results/predictions_*.csv`; tổng hợp ở `results/summary_*.json`; Word/slide được tạo từ số đo mới nhất có sẵn.
 
-Để cài môi trường mới: dùng Python 3.11, tạo venv và chạy `python -m pip install -r requirements.txt`. Các wheel trong `data/wheels` chỉ là cache cài đặt trên máy này. Trước khi chạy, tải checkpoint CLAP vào `data/630k-audioset-best.pt`, tải `ESC-50.zip` vào `data/` và giải nén để có `data/ESC-50/audio/*.wav`; các liên kết nguồn và SHA-256 ở bảng trên. GitHub đang từ chối upload Git LFS vì tài khoản vượt hạn mức, nên checkpoint, ZIP và WAV giải nén chưa có trong repo. Các kết quả đã đo vẫn được lưu ở `results/`.
+Để cài môi trường mới: dùng Python 3.11, tạo venv và chạy `python -m pip install -r requirements.txt`. Các wheel trong `data/wheels` chỉ là cache cài đặt trên máy này. Tại thư mục gốc, chạy `py -3.11 iknow_audio/download_assets.py` để tải checkpoint CLAP và ESC-50 từ nguồn công khai, kiểm tra kích thước/SHA-256 và giải nén 2.000 WAV vào `data/ESC-50/audio/`. Lệnh chạy lại sẽ kiểm tra tệp đã có và bỏ qua tải nếu đúng. Cần khoảng 3,5 GB để giữ ZIP, checkpoint và WAV đã giải nén. Các tệp lớn không lưu trên Git; kết quả đã đo vẫn có trong `results/`.
 
 ## Phương pháp và giới hạn
 
